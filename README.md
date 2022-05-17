@@ -16,11 +16,7 @@ Used node, nodemon, dotenv, express, mongoose, validator, Insomnia, MongoDB, and
 
 ## Usage
 
-Demo Video:
-
-<img src="./Assets/14-mvc-homework-demo-01.gif" width="600" height="350"/>
-
-[Deployed Link](https://mvc-t-blog.herokuapp.com/)
+[Demo Video]()
 
 ## Questions
 Have any Questions? Contact me: [carolynngo11@yahoo.com](mailto:carolynngo11@yahoo.com)
