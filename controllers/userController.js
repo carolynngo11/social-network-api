@@ -12,12 +12,12 @@ module.exports = {
         User.findOne({ _id: req.params.userId })
           .then( async (user) => 
             !user
-                ? res.status(404).json({ message: 'No user with that ID!'})
+                ? res.status(404).json({ message: 'No user with this ID!'})
                 : res.json(user)
           )
       },
     // Create a user
-    createUser(req, res) {
+    addUser(req, res) {
       User.create(req.body)
         .then((user) => res.json(user))
         .catch((err) => {
@@ -25,10 +25,6 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-    // Create second user
-
-    // Create third user
-
     // Update user
     updateUser(req, res) {
         User.findOneAndUpdate(
@@ -43,6 +39,16 @@ module.exports = {
           )
           .catch((err) => res.status(500).json(err));
     },
+    // Delete user
+    deleteUser(req, res) {
+      user.findOneAndDelete({ _id: req.params.userId})
+      .then((user) =>
+      !user
+        ? res.status(404).json({ message: 'No user with this ID.'})
+        : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
     // Add Friend
     addFriend(req, res) {  
         // console.log('You are adding a friend');
@@ -56,7 +62,7 @@ module.exports = {
               !user
                 ? res
                     .status(404)
-                    .json({ message: 'No user found with that ID!' })
+                    .json({ message: 'No user found with this ID!' })
                 : res.json(user)
             )
             .catch((err) => res.status(500).json(err));
@@ -73,7 +79,7 @@ module.exports = {
             !user
               ? res
                   .status(404)
-                  .json({ message: 'No user found with that ID!' })
+                  .json({ message: 'No user found with this ID!' })
               : res.json(user)
           )
           .catch((err) => res.status(500).json(err));

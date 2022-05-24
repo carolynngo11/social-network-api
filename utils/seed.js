@@ -26,6 +26,6 @@ connection.once('open', async () => {
     });
   }
 
-  console.info('Seeding complete! 🌱');
+  console.info('Seeding successful!');
   process.exit(0);
 });
