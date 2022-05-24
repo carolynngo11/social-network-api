@@ -9,8 +9,9 @@ const names = [
 const reactionDescriptions = [
     'Great',
     'Nice',
+    'Good',
     'Bad',
-    'Good'
+    'Terrible'
 ];
 
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
