@@ -16,7 +16,8 @@ Used node, nodemon, dotenv, express, mongoose, validator, Insomnia, MongoDB, and
 
 ## Usage
 
-[Demo Video](https://drive.google.com/file/d/1sqfE-55IjMVp0IIhLqC_BRUp0dwiYFo2/view)
+[Demo Video (part 1)](https://drive.google.com/file/d/1bcj1be1gH2KWRjJctlx-6yvnz5rEBfM3/view)
+[Demo Video (part 2)](https://drive.google.com/file/d/1JMToGNTvxO1lSCGUnufMywi-oInF3Qg5/view)
 
 ## Questions
 Have any Questions? Contact me: [carolynngo11@yahoo.com](mailto:carolynngo11@yahoo.com)
