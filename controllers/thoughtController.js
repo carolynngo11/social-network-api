@@ -4,7 +4,7 @@ module.exports = {
     // Get all thoughts
     getThoughts(req, res) {
       Thought.find()
-        .then((thought) => res.json(thought))
+        .then((thoughts) => res.json(thoughts))
         .catch((err) => res.status(500).json(err));
     },
     // Get single thought
@@ -17,14 +17,22 @@ module.exports = {
           )
       },
     // Add a thought
-    addThought(req, res) {
-      Thought.add(req.body)
-        .then((thought) => res.json(thought))
-        .catch((err) => {
-          console.log(err);
-          return res.status(500).json(err);
-        });
-    },
+    createThought(req, res) {
+    Thought.create(req.body)
+      .then((thought) => {
+        return User.findOneAndUpdate(
+          { username: req.body.username },
+          { $addToSet: { thoughts: thought._id } },
+          { runValidators: true, new: true }
+        )
+      })
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: 'No thought with this ID!' })
+          : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
   // Update a thought
     updateThought(req, res) {
       Thought.findOneAndUpdate(
